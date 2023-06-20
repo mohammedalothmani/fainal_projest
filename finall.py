@@ -23,5 +23,34 @@ class Studant :
         self.courses_list = [...]
         Studant.total_studants +=1
 
+    def enroll_new_course(self,course):
+        self.courses_list.append(course)
+
+    def get_student_details(self):
+        return self.__dict__
+
+    def get_studant_courses(self):
+        for course in self.courses_list:
+            print(f'course id : {course.course_id}')
+            print(f'course name : {course.course_name}')
+            print(f'course id : {course.course_mark}')
+            print()
+            print()
+    def get_studant_avareg(self):
+        total_marks = 0
+        for course in self.courses_list:
+            total_marks += course.course_mark
+        if len(self.courses_list) > 0 :
+            avareg = total_marks/ len(self.courses_list)
+            return avareg
+        else:
+            return 0
+
+
+
+
+
+
+
 
 
