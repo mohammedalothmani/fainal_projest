@@ -13,6 +13,7 @@ class Course :
 
 class Studant :
     total_studants = 0
+    student_list = []
 
 
     def __int__(self, student_name, student_age,student_number):
@@ -22,6 +23,7 @@ class Studant :
         self.student_number = student_number
         self.courses_list = [...]
         Studant.total_studants +=1
+        student.student_list.append(student)
 
     def enroll_new_course(self,course):
         self.courses_list.append(course)
@@ -46,11 +48,30 @@ class Studant :
         else:
             return 0
 
+student_list = []
 
+while True:
+    try:
+        selection = int(input("1.Add New Student\n"
+                              "2.Delete Student\n"
+                              "3.Display Student\n"
+                              "4.Get Student Average\n"
+                              "5.Add Course to student with mark.\n"
+                              "6.Exit"))
+        if selection == 1:
+            student_number = input('Enter Student Number')
+            exists = False
+            for student in student_list:
+                if student.student_number == student_number:
+                    exists = True
+                    break
+                if exists:
+                    print('Student Number already exists.')
+                else:
+                    student_name = input('inter student name')
+                    student_age = int(input('inter student age'))
 
-
-
-
-
+                    student = student(student_name, student_age,student_number)
+                    student_list.append(student)
 
 
